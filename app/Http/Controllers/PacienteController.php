@@ -45,8 +45,8 @@ class PacienteController extends Controller
     public function login(Request $request)
     {
         $credentials = $request->only('email', 'password');
-
-     //nueva linea   if (Auth::guard('paciente')->attempt($credentials)) {
+    //CONDICIONANTE ACTUALIZADO
+    if (Auth::guard('paciente')->attempt($credentials)) {
     return redirect()->route('home');
     }
 
